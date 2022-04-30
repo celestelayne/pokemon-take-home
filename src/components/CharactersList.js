@@ -1,13 +1,16 @@
 import React, {useState} from 'react';
 
 import CharacterItem from './CharacterItem';
+import Searchbar from './Searchbar'
 
 const CharactersList = ({characters, setCharacters, currentCharacter, showOneCharacter }) => {
 
     console.log(characters)
 
     const [searchTerm, setSearchTerm] = useState("");
+    const [filterType, setFilterType] = useState("")
 
+    //===== SEARCH FEATURE
     const handleSearchChange = e => {
       e.preventDefault()
       const searchQuery = e.target.value && e.target.value.toLowerCase();
@@ -20,10 +23,8 @@ const CharactersList = ({characters, setCharacters, currentCharacter, showOneCha
     : characters.filter(character =>
       character.name.toLowerCase().includes(searchTerm.toLowerCase())
       );
-    // console.log(searched);
     
     const types = Object.entries(characters).map(type => {
-      let result = []
       let arrays = type[1].types;
 
       for(let ele of arrays){
@@ -31,20 +32,21 @@ const CharactersList = ({characters, setCharacters, currentCharacter, showOneCha
       }
     })
     const characterTypes = [...new Set(types)]
-    
 
+    //===== FILTER FEATURE
+    const handleFilterChange = e => {
+      e.preventDefault()
+      const filterQuery = e.target.value;
+      console.log(filterQuery)
+      // setFilterType(filterQuery)
+    }
 
     return (
       <>
+        <Searchbar searchTerm={searchTerm} handleSearchChange={handleSearchChange}/>
         <div>
-          <input
-            type="text"
-            onChange={handleSearchChange}
-            placeholder="Search"
-          />
-        </div>
-        <div>
-          <select>
+          <select onChange={handleFilterChange}>
+            <option value="type">Type</option>
           {characterTypes && characterTypes.map(type => {
             return ( 
                 <option value={type}>{type}</option>
@@ -79,3 +81,4 @@ const CharactersList = ({characters, setCharacters, currentCharacter, showOneCha
 }
 
 export default CharactersList;
+
