@@ -3,21 +3,31 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import styled from 'styled-components'
 
 import Header from './components/Header';
 import CharactersList from './components/CharactersList';
 import CharacterDetailPage from './components/CharacterDetailPage';
 
-import './App.css';
+// import './App.css';
 
 const data = require('./pokemons.json');
+
+
+const Container = styled.div`
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background: lemonchiffon;
+`
 
 function App() {
 
   const initialCharacterState = {
     id: null,
     name: '',
-    classification: ''
+    classification: '',
+    image: ''
   }
 
   const [currentCharacter, setCurrentCharacter] = useState(initialCharacterState)
@@ -48,7 +58,7 @@ function App() {
   }
   
   return (
-    <div className="container">
+    <Container className="container">
         <Header/>
         <Routes>
           <Route 
@@ -69,7 +79,7 @@ function App() {
               currentCharacter={currentCharacter} 
           /> }/>
         </Routes>
-    </div>
+    </Container>
   );
 }
 

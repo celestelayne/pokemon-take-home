@@ -4,10 +4,11 @@ function CharacterDetailPage({currentCharacter}) {
 
   console.log(currentCharacter);
 
-  return(
+  let image = `https://img.pokemondb.net/artwork/${currentCharacter.name.toLowerCase().replace(/[&\\/\\\\#,+()$~%.'":*?<>{}]/g, '').replace(' ', '-')}.jpg`;
 
+  return(
     <>
-      <p>{currentCharacter.name}</p>
+      <img src={image} />
     </>
   )
 }

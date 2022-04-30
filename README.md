@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Challenges Coding Exercise Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+We have provided you with a simple GraphQL server that serves Pokemon data. The server is non-persistent and therefore on server restart, data will reset. Using the provided server, your mission is to build a small application that should be able to: 
 
-## Available Scripts
+- Search for Pokemon by text through use of a search bar.
+- Filter Pokemon by type using a dropdown.
+- Add and remove a Pokemon to and from your Favorites by clicking the heart icon.
+- Use tabs to switch between `All` Pokemon and `Favorite` Pokemon views.
+- Change the view from either a grid or list.
+- View Pokemon details using a `/:name` route.
+- Clicking on a Pokemon image or name should navigate to the above route to view the Pokemon details.
+- On the Pokemon details page, have a speaker icon that, when clicked, plays the sound of that Pokemon.
 
-In the project directory, you can run:
+In addition to the above features, below are some optional features that we'd love to see at least one of:
+- Infinitely scrolled or paginated list to handle on-demand data-fetching for the long list of Pokemon.
+- Add a quick view button on the Pokemon list items that shows a modal with more information of the Pokemon.
+- Add toast notifications to show success or error messages when adding or removing a Pokemon to and from your Favorites.
 
-### `npm start`
+### Technology and boilerplate
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+You are free to use whatever stack you want but what we value the most is [React](https://github.com/facebook/react). We have put together a boilerplate that includes packages and folders ready to create a flow similar to our app including:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React.
+- React Router.
+- React Apollo.
+- GraphQL.
+- Typescript.
+- Styled Components.
 
-### `npm test`
+Use only what you are comfortable with and feel free to use any additional libraries you deem necessary to complete the exercise. **However**, Please refrain from using any component libraries such as React Toolbox, React Material UI, etc. as we would like to see your CSS skills.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Example
 
-### `npm run build`
+A video example can be found in the example folder in the root of the directory as `example.mov`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+List View           |  Detail View
+:-------------------------:|:-------------------------:
+![](example/example-list-view.png) |  ![](example/example-detail-view.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Getting started
 
-### `npm run eject`
+#### Run the server
+```
+$ cd backend
+$ npm install
+$ npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### Run the frontend
+```
+$ cd frontend
+$ npm install
+$ npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Hints
+- React recently announced their [Hooks API](https://reactjs.org/docs/hooks-intro.html). We'd love to see you try and use Hooks in your app.
+- If you access the `/graphql` endpoint in the browser, you'll be presented with a GraphQL Playground that allows you to run Queries and Mutations as well as view the GraphQL Schema.
+- There is no need to configure a build, the development env. is sufficient.
+- **Tests** are important and if time allows it, we'd like to see *some* test coverage.
