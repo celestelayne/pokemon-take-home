@@ -33,9 +33,6 @@ function App() {
   const [currentCharacter, setCurrentCharacter] = useState(initialCharacterState)
   const [characters, setCharacters] = useState(data);
 
-  const  [ filteredCharacters, setfilteredCharacters ]= useState({})
-  const [ searchCharacter, setSearchCharacter ] = useState("");
-
   const showOneCharacter = async character => {
     setCurrentCharacter({
       id: character.id,
@@ -44,22 +41,10 @@ function App() {
     })
     console.log(character)
   }
-
-  const updateSearchInput = input => {
-
-    console.log(input)
-
-    let filtered = filteredCharacters && filteredCharacters.filter(filteredCharacter => {
-      return filteredCharacter.name.includes(input)
-    })
-
-    setSearchCharacter(input)
-    searchCharacter(filtered)
-  }
   
   return (
     <Container className="container">
-        <Header/>
+        <Header />
         <Routes>
           <Route 
             exact path='/' 
@@ -67,8 +52,6 @@ function App() {
               characters={characters}
               setCharacters={setCharacters}
               showOneCharacter={showOneCharacter}
-              searchCharacter={searchCharacter} 
-              updateSearchInput={updateSearchInput}
             />} 
           />
           <Route 

@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 
-import { Searchbar } from './Searchbar';
-
 const HeaderWrapper = styled.div`
   display: flex;
   padding: 20px;
@@ -17,13 +15,14 @@ const Navigation = styled.nav`
   width: 100%;
 `
 
-const Header = () => {
+
+const Header = ({updateSearchInput}) => {
     return (
       <HeaderWrapper>
-        <Navigation>
-          <Link to={'/'}>All</Link>
-          <Link to={'/favorites'}>Favorites</Link>
-        </Navigation>
+          <Navigation>
+            <Link to={'/'}>All</Link>
+            <Link to={'/favorites'}>Favorites</Link>
+          </Navigation>
       </HeaderWrapper>
     )
 }
