@@ -13,7 +13,7 @@ const CharacterCards = styled.div`
 `
 
 const CharacterItem = ({character, showOneCharacter}) => {
-  console.log(character)
+  // console.log(character)
   if (character !== undefined) {
     return (
       <CharacterCards>

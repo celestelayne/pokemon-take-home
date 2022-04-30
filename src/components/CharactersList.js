@@ -4,32 +4,54 @@ import CharacterItem from './CharacterItem';
 
 const CharactersList = ({characters, setCharacters, currentCharacter, showOneCharacter }) => {
 
-  console.log(characters)
+    console.log(characters)
 
-  const [searchTerm, setSearchTerm] = useState("");
+    const [searchTerm, setSearchTerm] = useState("");
 
-  const handleSearchChange = e => {
-    e.preventDefault()
-    const searchQuery = e.target.value && e.target.value.toLowerCase();
-    console.log(searchQuery)
-    setSearchTerm(searchQuery);
-  };
+    const handleSearchChange = e => {
+      e.preventDefault()
+      const searchQuery = e.target.value && e.target.value.toLowerCase();
+      // console.log(searchQuery)
+      setSearchTerm(searchQuery);
+    };
 
-  const searched = !searchTerm
-  ? characters
-  : characters.filter(character =>
-    character.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    const searched = !searchTerm
+    ? characters
+    : characters.filter(character =>
+      character.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    // console.log(searched);
+    
+    const types = Object.entries(characters).map(type => {
+      let result = []
+      let arrays = type[1].types;
 
-    console.log(searched)
+      for(let ele of arrays){
+        return [...ele].join('').replace(' ', '')
+      }
+    })
+    const characterTypes = [...new Set(types)]
+    
+
 
     return (
       <>
-        <input
-          type="text"
-          onChange={handleSearchChange}
-          placeholder="Search"
-        />
+        <div>
+          <input
+            type="text"
+            onChange={handleSearchChange}
+            placeholder="Search"
+          />
+        </div>
+        <div>
+          <select>
+          {characterTypes && characterTypes.map(type => {
+            return ( 
+                <option value={type}>{type}</option>
+            )
+          })}
+          </select>
+        </div>
           <div>
             {searchTerm !== "" ?
               searched.map((character, key) => {
