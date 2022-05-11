@@ -11,20 +11,17 @@ const Input = styled.input.attrs({
   border: none;
   cursor: pointer;
   ::placeholder {
-    color: #141414;
+    color: #878787;
   },
   :focus {
     outline: none;
   }
 `
 
-
 const Searchbar = ({ searchTerm, handleSearchChange }) => {
 
-  // console.log(searchTerm)
-  
   return(
-    <div>
+    <div className="character-searchbar">
       <Input
         type="search"
         value={searchTerm}
