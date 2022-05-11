@@ -7,10 +7,10 @@ import styled from 'styled-components'
 import FavoriteBtn from './FavoriteBtn'
 
 const CharacterCards = styled.div`
-  flex: 1 0 20%;
-  margin: 5px;
+  // flex: 1 0 20%;
+  // margin: 5px;
   min-height: 100%;
-  border: 1px solid black;
+  border: 1px solid #e2e2e2;
 `
 
 const Header = styled.div`
@@ -19,7 +19,8 @@ const Header = styled.div`
 `
 
 const Image = styled.img`
-  height: 100%;
+  width: 100%;
+  object-fit: scale-down;
 `
 
 const Footer = styled.div`
@@ -27,7 +28,7 @@ const Footer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 10px;
-  background: lemonchiffon;
+  background: #f3f3f3;
 `
 
 const CharacterItem = ({
@@ -49,16 +50,25 @@ const CharacterItem = ({
       <Header className="character-header">
         <Image src={image} />
       </Header>
-      <Footer className="character-footer">
-        <Link 
-          to={`/${character.name}`}
-          onClick={() => handleDetailsClick(character)}
-        >{character.name}</Link>
-        <p>{character.types}</p>
-        <FavoriteBtn 
-          onClick={() => toggleFavorite(character.id)}
-          favorite={isFavorite(character.id)} />
-          </Footer>
+      <Footer className="character-list-view-footer">
+        <div className="character-text">
+          <Link 
+              className="character-list-title"
+              to={`/${character.name}`}
+              onClick={() => handleDetailsClick(character)}
+            ><h3>{character.name}</h3></Link>
+            {character.types.map((type, index) => {
+              return <span className="character-list-type" key={index}>{type}</span>
+          })} 
+        </div>
+        <div className="character-icon">
+          <span className="favorite-icon">
+          <FavoriteBtn 
+            onClick={() => toggleFavorite(character.id)}
+            favorite={isFavorite(character.id)} />
+          </span>
+        </div>
+      </Footer>
     </CharacterCards>
   )
 }
