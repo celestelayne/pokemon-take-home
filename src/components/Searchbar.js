@@ -9,6 +9,7 @@ const Input = styled.input.attrs({
   width: 100%;
   font-size: 18px;
   border: none;
+  padding: 10px;
   cursor: pointer;
   ::placeholder {
     color: #878787;
