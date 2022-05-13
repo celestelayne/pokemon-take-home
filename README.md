@@ -44,19 +44,21 @@ Open your browser and navigate to:
 
 ####  Problem Implementation
 
-<img src="assets/pokemon-take-home-01.gif" alt="pokemon-take-home-01" width="200"/>
+<img src="assets/pokemon-take-home-01.gif" alt="pokemon-take-home-01" width="500"/>
 
 Considering that the most valued technology stack for this exercise required using [React](https://github.com/facebook/react), I pulled out the `frontend` part of the provided boilerplate and served up the `pokemons.json` file from the root of the `src` folder. 
 
 #### Features
 
-##### [1.] Search for Pokemon by text using a search bar
+##### 1. Search for Pokemon by text using a search bar
 
 The functionality for the Search Bar tracks each change whenever the user types into the input field. The useState Hook declares a state variable and returns a pair of values: the current state and a function that updates the state whenever there is a change in the input field.
 
-![](assets/pokemon-take-home-02.gif)
+<img src="assets/pokemon-take-home-02.gif" alt="pokemon-take-home-02" width="500"/>
 
-##### Filter Pokemon by type using a dropdown
+##### 2. Filter Pokemon by type using a dropdown
+
+The functionality for the Filter Dropdown 
 
 ![](assets/pokemon-take-home-03.gif)
 
