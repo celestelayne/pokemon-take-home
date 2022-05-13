@@ -5,8 +5,11 @@ const Select = styled.select`
   width: 100%;
   height: 40px;
   background: #F4F4F4;
+  color: #878787;
+  appearance:none;
   font-size: 18px;
   border: none;
+  padding: 10px;
   option {
     color: black;
     background: white;
@@ -19,6 +22,7 @@ const Select = styled.select`
 
 const FilterDropdown = ({ characters, handleFilterChange }) => {
 
+  // iterate over character types to populate <options> element
   const types = Object.entries(characters).map(type => {
     let arrays = type[1].types;
 
@@ -31,14 +35,13 @@ const FilterDropdown = ({ characters, handleFilterChange }) => {
 
   return(
     <div className="character-filter-dropdown">
-      {/* basic select input that sets the value to the selected value*/}
       <Select onChange={handleFilterChange}>
         <option value="All">Filter By Type</option>
-      {characterTypes && characterTypes.map((type, index) => {
-        return ( 
-            <option key={index} value={type}>{type}</option>
-        )
-      })}
+          {characterTypes && characterTypes.map((type, index) => {
+            return ( 
+              <option key={index} value={type}>{type}</option>
+            )
+          })}
       </Select>
     </div>
   )
