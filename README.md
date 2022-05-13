@@ -59,3 +59,32 @@ $ npm start
 - If you access the `/graphql` endpoint in the browser, you'll be presented with a GraphQL Playground that allows you to run Queries and Mutations as well as view the GraphQL Schema.
 - There is no need to configure a build, the development env. is sufficient.
 - **Tests** are important and if time allows it, we'd like to see *some* test coverage.
+
+#### Results
+
+![](assets/pokemon-take-home-01.gif)
+
+#### Features
+
+##### Search for Pokemon by text through use of a search bar
+
+![](assets/pokemon-take-home-02.gif)
+
+##### Filter Pokemon by type using a dropdown
+
+![](assets/pokemon-take-home-03.gif)
+
+##### Add and remove a Pokemon to and from your Favorites by clicking the heart icon.
+
+![](assets/pokemon-take-home-04.gif)
+
+##### Use tabs to switch between `All` Pokemon and `Favorite` Pokemon views.
+
+##### Change the view from either a grid or list.
+
+
+##### Clicking on a Pokemon image or name should navigate to the above route to view the Pokemon details.
+
+#### Bonus Feature
+
+##### Add a quick view button on the Pokemon list items that shows a modal with more information of the Pokemon.
