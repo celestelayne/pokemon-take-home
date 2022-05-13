@@ -1,11 +1,12 @@
 import React from 'react';
+
 import styled from 'styled-components'
 
-import { FaPlayCircle } from 'react-icons/fa';
-
 const Content = styled.div`
-  height: 15vh;
+  height: 20vh;
   background: #f3f3f3;
+  display: flex;
+  flex-direction: column;
 `
 
 const Footer = styled.div`
@@ -23,16 +24,28 @@ function CharacterDetailPage({ currentCharacter, children }) {
 
   let image = `https://img.pokemondb.net/artwork/${currentCharacter.name.toLowerCase().replace(/[&\\/\\\\#,+()$~%.'":*?<>{}]/g, '').replace(' ', '-')}.jpg`;
 
-  return(
+  let evolutionImage;
+  if(currentCharacter.evolutions){
+    evolutionImage =  currentCharacter.evolutions.map((evolution, index) => {
+      let image = `https://img.pokemondb.net/artwork/${evolution.name.toLowerCase().replace(/[&\\/\\\\#,+()$~%.'":*?<>{}]/g, '').replace(' ', '-')}.jpg`;
+      return (   
+        <div className="character-evolutions" key={index} >
+          <img src={image} />
+          <h3 className="evolutions-footer">{evolution.name}</h3>
+        </div>
+      )
+  })
+  }
+
+  return (
+    <>
     <div className="character-details">
       <Image className="character-header">
         <img src={image} />
-        <div className="character-sound">
-          <FaPlayCircle/>
-        </div>
       </Image>
 
       <Content className="character-content">
+
         <div className="character-content-top">
           <div className="character-text">
             <h2 className="character-title">{currentCharacter.name}</h2>
@@ -42,6 +55,7 @@ function CharacterDetailPage({ currentCharacter, children }) {
             <span className="favorite-icon">{children}</span>
           </div>
         </div>
+
         <div className="character-content-bottom">
           <div className="combat">
             <div className="combat-power"></div>
@@ -52,6 +66,7 @@ function CharacterDetailPage({ currentCharacter, children }) {
             <p className="hit-power-score">HP: {currentCharacter.maxHP}</p>
           </div>
         </div>
+
       </Content>
       
       <Footer className="character-footer">
@@ -64,8 +79,16 @@ function CharacterDetailPage({ currentCharacter, children }) {
           <p>{currentCharacter.height.minimum} &mdash; {currentCharacter.height.maximum}</p>
         </div>
       </Footer>
-
     </div>
+
+    
+    <div className="evolutions-details">
+      <h3 className="evolutons-header">Evolutions</h3>
+      <div className="evolutions-grid">
+        {evolutionImage}
+      </div>
+    </div>
+    </>
   )
 }
 
