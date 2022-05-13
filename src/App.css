@@ -11,9 +11,268 @@ body {
  font-family: 'Roboto', sans-serif;
  background: #f4f4f4;
  color: #141414;
+ height: 100vh;
 }
 
-.character-item {
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 24%);
+  grid-template-rows: auto;
+  grid-gap: 12px;
+  margin-top: 120px;
+  margin-left: 10px;
+  /* background: red; */
+}
+
+.character-list {
+  /* background: yellow; */
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 120px;
+}
+
+.character-card-list {
+  /* background: blue; */
+  display: flex;
+  height: 15vh;
+}
+
+.character-card-list .character-header-list {
+  height: 100%;
+  width: 10vw;
+}
+
+.character-card-list .character-footer-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-top: 5vh;
+  height: 100%;
+  justify-content: center;
+}
+
+.character-details {
+  border: 1px solid #e2e2e2;
+  margin: 0 10px;
+  margin-top: 120px;
+  grid-area: card;
+}
+
+.evolutions-details {
+    background: yellow;
+}
+
+.evolutions-footer {
+  /* background: yellow; */
+  padding: 10px;
+  border: 1px solid #e2e2e2;
+}
+
+.evolutions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 24%);
+  grid-template-rows: auto;
+  grid-gap: 12px;
+  /* margin-top: 120px; */
+  /* margin-left: 10px; */
+  /* border: 1px solid red; */
+}
+
+.character-evolutions {
+  border: 1px solid #e2e2e2;
+  margin: 0 10px;
+  margin-top: 20px;
+  background: yellow;
+}
+
+.character-evolutions img {
+  width: 100%;
+}
+
+img {
+  height: 100%;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+h3 {
+  text-decoration: none;
+}
+
+.character-content {
+  border-bottom: 1px solid #e2e2e2;
+  padding: 20px;
+}
+
+.character-content-top {
+  display: flex;
+  width: 100%;
+}
+
+.character-content-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.character-content-top.character-text {
+  line-height: 1em;
+}
+
+.character-icon-grid {
+  /* margin-left: auto; */
+  width: 2vw;
+}
+
+.character-icon-list {
+  /* margin-left: auto; */
+  width: 5vw;
+}
+
+.favorite-icon button,
+.favorite-icon button true {
+  border: none;
+  color: #ea3423;
+}
+
+.favorite-icon button svg {
+  transform: scale(2.5);
+}
+
+.pokemon-favorite {
+  border: none;
+  color: #ea3423;
+  transform: scale(80%);
+}
+
+.combat, .hit {
+  display: flex;
+  height: 3vh;
+  margin-top: 10px;
+}
+
+.combat.combat-power-score {
+  width: 20%;
+}
+
+div.combat-power {
+  flex: 1;
+  margin: 0 20px 0 0;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9ea0f8;
+}
+
+div.hit-power {
+  flex: 1;
+  margin: 0 20px 0 0;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #84bfa3;
+}
+
+.character-list-title {
+  text-decoration: none;
+  color: #141414;
+}
+.character-list-type {
+  padding-right: 8px;
+}
+
+.character-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.character-footer-left,
+.character-footer-right {
+  width: 50%;
+  text-align: center;
+  line-height: 1.68em;
+  letter-spacing: .2px;
+}
+
+.character-searchbar {
+  width: 60%;
+  border-right: 5px solid white;
+}
+
+.character-filter-dropdown {
+  width: 30%;
+  border-left: 5px solid white;
+  border-right: 5px solid white;
+}
+
+.character-layout a {
+  border-left: 5px solid white;
+  width: 10%;
+  color: #878787;
+}
+
+.character-layout a svg {
+  transform: scale(100%);
+}
+
+.character-layout button {
+  border: none;
+  background: none;
+  /* width: 5vw; */
+  transform: scale(2);
+  color: #878787;
+  line-height: 40px;
+  margin-left: 30px;
+}
+
+.character-footer-content {
+  display: flex;
+  height: 10vh;
+}
+
+.modal {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  width: 40%;
+  background-color: #FFF;
+  line-height: 1.68;
+  padding: 20px;
+}
+
+.modal-header, .modal-footer {
+  padding: 20px;
+}
+
+.modal-body {
+  padding: 20px;
+  border-top: 1px solid #EEE;
+  border-bottom: 1px solid #EEE;
+}
+
+span.modal-info {
+  font-weight: bold;
+}
+
+.quick-view-btn {
+  border: none;
+    width: 100%;
+    line-height: 40px;
+}
+
+.character-icon {
+  /* margin-left: auto; */
+    width: 10%;
+    padding: 10px;
+}
+
+.character-text {
+  line-height: 1.68em;
+  flex: 1;
+}
+
+h3.evolutons-header {
+  margin: 0 10px;
+  margin-top: 2em;
 }
