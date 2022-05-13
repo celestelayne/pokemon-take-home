@@ -60,19 +60,26 @@ The functionality for the Search Bar tracks each change whenever the user types 
 
 The functionality for the Filter Dropdown 
 
-![](assets/pokemon-take-home-03.gif)
+<img src="assets/pokemon-take-home-03.gif" alt="pokemon-take-home-03" width="500"/>
 
 ##### Add and remove a Pokemon to and from your Favorites by clicking the heart icon.
 
-![](assets/pokemon-take-home-04.gif)
+<img src="assets/pokemon-take-home-04.gif" alt="pokemon-take-home-04" width="500"/>
 
 ##### Use tabs to switch between `All` Pokemon and `Favorite` Pokemon views.
 
+<img src="assets/pokemon-take-home-05.gif" alt="pokemon-take-home-05" width="500"/>
+
 ##### Change the view from either a grid or list.
 
+<img src="assets/pokemon-take-home-06.gif" alt="pokemon-take-home-06" width="500"/>
 
 ##### Clicking on a Pokemon image or name should navigate to the above route to view the Pokemon details.
+
+<img src="assets/pokemon-take-home-07.gif" alt="pokemon-take-home-07" width="500"/>
 
 #### Bonus Feature
 
 ##### Add a quick view button on the Pokemon list items that shows a modal with more information of the Pokemon.
+
+<img src="assets/pokemon-take-home-08.gif" alt="pokemon-take-home-08" width="500"/>
