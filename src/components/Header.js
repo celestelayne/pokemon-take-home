@@ -5,36 +5,37 @@ import styled from 'styled-components'
 import Searchbar from './Searchbar';
 import FilterDropdown from './FilterDropdown';
 
-import { FaList } from 'react-icons/fa';
+import { FaBars, FaThLarge } from 'react-icons/fa';
 
 const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  // height: 10vh;
   padding: 10px;
-  // border: 1px solid #000000;
   color: #141414;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
   z-index: 10;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
 `
 
 const Navigation = styled.nav`
   display: flex;
   justify-content: space-around;
   width: 100%;
-  // height: 5vh;
+  margin-bottom: 5px;
 `
 
 const SubHeader = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
-  // height: 5vh;
 `
 
 const StyledLink = styled(Link)`
   color: #f4f4f4;
-  background-color: #141414;
+  background-color: #84BFA3;
   width: 100%;
   height: 40px;
   text-align: center;
@@ -44,31 +45,23 @@ const StyledLink = styled(Link)`
 `
 
 const Header = ({ 
-  setFilter, 
   characterTypes, 
   handleFilterChange, 
   characters, 
-  favorites, 
+  setCharacters,
   searchTerm, 
-  handleSearchChange 
+  handleSearchChange,
+  setLayoutView
 }) => {
-  
-const handleFilterClick = (filter) => {
-  console.log("Setting filter to " + filter)
-  setFilter(filter)
-}
 
   return (
     <HeaderWrapper>
 
         <Navigation>
           <StyledLink 
-            onClick={() => handleFilterClick('all')} 
-            to={'/'}>All</StyledLink>
-          <StyledLink 
-            onClick={() => handleFilterClick('favorites')} 
-            to={'/favorites'}>Favorites &nbsp; <span>{favorites.length}</span></StyledLink>
-            
+            to={'/'}
+            onClick={() => setCharacters(characters)}>All</StyledLink>
+          <StyledLink to={'/favorites'}>Favorites</StyledLink>
         </Navigation>
 
         <SubHeader>
@@ -81,7 +74,15 @@ const handleFilterClick = (filter) => {
             characterTypes={characterTypes} 
             handleFilterChange={handleFilterChange}
           />
-          <FaList />
+          <div className="character-layout">
+            <button 
+              onClick={() => setLayoutView(false)}
+              to="/"><FaBars /></button>
+              
+            <button 
+              onClick={() => setLayoutView(true)}
+              to="/"><FaThLarge/></button>
+          </div>
         </SubHeader>
 
     </HeaderWrapper>
