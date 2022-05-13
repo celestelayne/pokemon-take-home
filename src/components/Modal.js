@@ -40,8 +40,8 @@ function Modal({ showModal, onClose, modalCharacter }) {
           </p>
         </div>
         <div className="modal-body">
-          <p>Weight: {modalCharacter.weight.minimum} &mdash; {modalCharacter.weight.maximum}</p>
-          <p>Height: {modalCharacter.height.minimum} &mdash; {modalCharacter.height.maximum}</p>
+          <p><span className="modal-info">Weight:</span> {modalCharacter.weight.minimum} &mdash; {modalCharacter.weight.maximum}</p>
+          <p><span className="modal-info">Height:</span> {modalCharacter.height.minimum} &mdash; {modalCharacter.height.maximum}</p>
           <div className="combat">
             <div className="combat-power"></div>
             <p className="combat-power-score">CP: {modalCharacter.maxCP}</p>
@@ -51,21 +51,21 @@ function Modal({ showModal, onClose, modalCharacter }) {
             <p className="hit-power-score">HP: {modalCharacter.maxHP}</p>
           </div>
           <div className="resistant">
-            <p>Resistant: 
+            <p><span className="modal-info">Resistant:</span> 
               {modalCharacter.resistant.map((item, index) => {
                 return <span className="character-list-type" key={index}> {item},</span>
               })} 
             </p>
           </div>
           <div className="weaknesses">
-            <p>Weaknesses: 
+            <p><span className="modal-info">Weaknesses:</span>
               {modalCharacter.weaknesses.map((weakness, index) => {
                 return <span className="character-list-type" key={index}> {weakness},</span>
               })} 
             </p>
           </div>
           <div className="attacks">
-            <p>Fast Attacks: 
+            <p><span className="modal-info">Fast Attacks:</span>
               {modalCharacter.attacks.fast.map((attack, index) => {
                 return <span className="character-list-type" key={index}> {attack.name},</span>
               })} 
@@ -73,7 +73,7 @@ function Modal({ showModal, onClose, modalCharacter }) {
           </div>
 
           <div className="attacks">
-            <p>Special Attacks: 
+            <p><span className="modal-info">Special Attacks:</span>
               {modalCharacter.attacks.special.map((attack, index) => {
                 return <span className="character-list-type" key={index}> {attack.name},</span>
               })} 
