@@ -58,37 +58,47 @@ The functionality for the Search Bar tracks each change whenever the user types 
 
 ##### 2. Filter Pokemon by type using a dropdown
 
-The functionality for the Filter Dropdown 
-
 <img src="assets/pokemon-take-home-03.gif" alt="pokemon-take-home-03" width="500"/>
 
-##### Add and remove a Pokemon to and from your Favorites by clicking the heart icon.
+##### 3. Add and remove a Pokemon to and from your Favorites by clicking the heart icon.
 
 <img src="assets/pokemon-take-home-04.gif" alt="pokemon-take-home-04" width="500"/>
 
-##### Use tabs to switch between `All` Pokemon and `Favorite` Pokemon views.
+##### 4. Use tabs to switch between `All` Pokemon and `Favorite` Pokemon views.
 
 <img src="assets/pokemon-take-home-05.gif" alt="pokemon-take-home-05" width="500"/>
 
-##### Change the view from either a grid or list.
+##### 5. Change the view from either a grid or list.
 
 <img src="assets/pokemon-take-home-06.gif" alt="pokemon-take-home-06" width="500"/>
 
-##### Clicking on a Pokemon image or name should navigate to the above route to view the Pokemon details.
+##### Clicking on a Pokemon image or name should navigate to the `/:name` route to view the Pokemon details.
 
 <img src="assets/pokemon-take-home-07.gif" alt="pokemon-take-home-07" width="500"/>
 
-##### On the Pokemon details page, the speaker icon plays the sound of that Pokemon when clicked.
+##### 6. On the Pokemon details page, the speaker icon plays the sound of that Pokemon when clicked.
 
-The `public` folder was useful as a workaround to serving up the audio files from a server. Moving the `sounds/` folder into the `public` folder  made these .mp3 files accessible accessible via the `process.env.PUBLIC_URL` prefix.
+The `public` folder was useful as a workaround to serving up the audio files from a server. Moving the `sounds/` folder into the `public` folder  made these .mp3 files accessible accessible via the `process.env.PUBLIC_URL` prefix. The sound variable was initialized in the `CharacterDetailPage` component:
+
+```js
+let sound = process.env.PUBLIC_URL + `/assets/sounds/${parseInt(currentCharacter.id, 10)}.mp3`;
+```
+
+The sound URL is passed into the Audio constructor which creates and returns a new HTMLAudioElement. Once the audio object instance is created and the `.mp3` file is loaded, the button takes an onClick handler that calls the `play()` method.
+
+```js
+  <button className="character-audio" onClick={() => audio.play()}>
+    ...
+  </button>
+```
 
 <img src="assets/pokemon-take-home-09.gif" alt="pokemon-take-home-09" width="500"/>
 
 #### Bonus Feature
 
-##### Add a quick view button on the Pokemon list items that shows a modal with more information of the Pokemon.
+##### 7. Add a quick view button on the Pokemon list items that shows a modal with more information of the Pokemon.
 
-Initially, the modal implementation had a simple show and hide toggle. As the feature developed, the modal needed to present dynamic data based on the Pokemon character that was clicked. The `showModal` and `modalCharacter` states were declared at the `App` level with their respective functions called within a handleClick that gets passed down to the Quick View `button` that fires the event. 
+Initially, the modal implementation had a simple show and hide toggle. As the feature developed, the modal needed to present dynamic data based on the Pokemon character that was clicked. The `showModal` and `modalCharacter` states were declared at the `App` level with their respective functions called within a handleClick that gets passed down to the Quick View `button` in the `CharacterItem` component where the event fires. 
 
 ```js
   <Modal 
