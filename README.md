@@ -72,11 +72,11 @@ The functionality for the Search Bar tracks each change whenever the user types 
 
 <img src="assets/pokemon-take-home-06.gif" alt="pokemon-take-home-06" width="500"/>
 
-##### Clicking on a Pokemon image or name should navigate to the `/:name` route to view the Pokemon details.
+##### 6. Clicking on a Pokemon image or name should navigate to the `/:name` route to view the Pokemon details.
 
 <img src="assets/pokemon-take-home-07.gif" alt="pokemon-take-home-07" width="500"/>
 
-##### 6. On the Pokemon details page, the speaker icon plays the sound of that Pokemon when clicked.
+##### 7. On the Pokemon details page, the speaker icon plays the sound of that Pokemon when clicked.
 
 The `public` folder was useful as a workaround to serving up the audio files from a server. Moving the `sounds/` folder into the `public` folder  made these .mp3 files accessible accessible via the `process.env.PUBLIC_URL` prefix. The sound variable was initialized in the `CharacterDetailPage` component:
 
@@ -96,7 +96,7 @@ The sound URL is passed into the Audio constructor which creates and returns a n
 
 #### Bonus Feature
 
-##### 7. Add a quick view button on the Pokemon list items that shows a modal with more information of the Pokemon.
+##### 8. Add a quick view button on the Pokemon list items that shows a modal with more information of the Pokemon.
 
 Initially, the modal implementation had a simple show and hide toggle. As the feature developed, the modal needed to present dynamic data based on the Pokemon character that was clicked. The `showModal` and `modalCharacter` states were declared at the `App` level with their respective functions called within a handleClick that gets passed down to the Quick View `button` in the `CharacterItem` component where the event fires. 
 
