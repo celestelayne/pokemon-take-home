@@ -70,6 +70,12 @@ The functionality for the Search Bar tracks each change whenever the user types 
 
 ##### 5. Change the view from either a grid or list.
 
+The functionality for this feature hinges on a ternary operator that allows the className attribute to dynamically change when the button click is fired. The layout view state is initialized in the App component with `grid` as the default state.
+
+```js
+<div className={`character-${layoutView ? "grid" : "list"}`}>
+```
+
 <img src="assets/pokemon-take-home-06.gif" alt="pokemon-take-home-06" width="500"/>
 
 ##### 6. Clicking on a Pokemon image or name should navigate to the `/:name` route to view the Pokemon details.
