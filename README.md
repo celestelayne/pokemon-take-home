@@ -31,7 +31,7 @@ The technologies used in this exxercise include:
 
 #### Run the frontend
 ```
-$ cd frontend
+$ cd pokemon-take-home
 $ npm install
 $ npm start
 ```
@@ -42,7 +42,7 @@ Open your browser and navigate to:
   http://localhost:3000/
 ```
 
-####  Problem Implementation
+###  Problem Implementation
 
 <img src="assets/pokemon-take-home-01.gif" alt="pokemon-take-home-01" width="500"/>
 
