@@ -58,8 +58,14 @@ body {
   grid-area: card;
 }
 
-.evolutions-details {
-    /* background: yellow; */
+.character-header {
+  position: relative;
+}
+
+.character-header .character-audio { 
+  position: absolute; 
+  bottom: 30px; 
+  left: 30px; 
 }
 
 .evolutions-footer {
