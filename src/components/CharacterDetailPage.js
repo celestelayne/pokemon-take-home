@@ -1,4 +1,5 @@
 import React from 'react';
+import { GiSpeaker } from "react-icons/gi";
 
 import styled from 'styled-components'
 
@@ -23,6 +24,9 @@ const Image = styled.div`
 function CharacterDetailPage({ currentCharacter, children }) {
 
   let image = `https://img.pokemondb.net/artwork/${currentCharacter.name.toLowerCase().replace(/[&\\/\\\\#,+()$~%.'":*?<>{}]/g, '').replace(' ', '-')}.jpg`;
+  
+  let sound = process.env.PUBLIC_URL + `/assets/sounds/${parseInt(currentCharacter.id, 10)}.mp3`;
+  const audio = new Audio(sound)
 
   let evolutionImage;
   if(currentCharacter.evolutions){
@@ -34,14 +38,17 @@ function CharacterDetailPage({ currentCharacter, children }) {
           <h3 className="evolutions-footer">{evolution.name}</h3>
         </div>
       )
-  })
+    })
   }
 
   return (
     <>
     <div className="character-details">
       <Image className="character-header">
-        <img src={image} />
+        <img className="character-image" src={image} />
+        <button className="character-audio" onClick={() => audio.play()}>
+          <GiSpeaker/>
+        </button>
       </Image>
 
       <Content className="character-content">
