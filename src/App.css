@@ -65,7 +65,14 @@ body {
 .character-header .character-audio { 
   position: absolute; 
   bottom: 30px; 
-  left: 30px; 
+  left: 30px;
+  border: none;
+  background: #FFF;
+}
+
+.character-header .character-audio svg {
+  transform: scale(4);
+  color: #878787;
 }
 
 .evolutions-footer {

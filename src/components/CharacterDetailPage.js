@@ -26,7 +26,8 @@ function CharacterDetailPage({ currentCharacter, children }) {
   let image = `https://img.pokemondb.net/artwork/${currentCharacter.name.toLowerCase().replace(/[&\\/\\\\#,+()$~%.'":*?<>{}]/g, '').replace(' ', '-')}.jpg`;
   
   let sound = process.env.PUBLIC_URL + `/assets/sounds/${parseInt(currentCharacter.id, 10)}.mp3`;
-  const audio = new Audio(sound)
+  const audio = new Audio(sound);
+  audio.volume = 0.2;
 
   let evolutionImage;
   if(currentCharacter.evolutions){
