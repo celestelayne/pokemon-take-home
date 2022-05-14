@@ -78,8 +78,30 @@ The functionality for the Filter Dropdown
 
 <img src="assets/pokemon-take-home-07.gif" alt="pokemon-take-home-07" width="500"/>
 
+##### On the Pokemon details page, the speaker icon plays the sound of that Pokemon when clicked.
+
+The `public` folder was useful as a workaround to serving up the audio files from a server. Moving the `sounds/` folder into the `public` folder  made these .mp3 files accessible accessible via the `process.env.PUBLIC_URL` prefix.
+
+<img src="assets/pokemon-take-home-09.gif" alt="pokemon-take-home-09" width="500"/>
+
 #### Bonus Feature
 
 ##### Add a quick view button on the Pokemon list items that shows a modal with more information of the Pokemon.
+
+Initially, the modal implementation had a simple show and hide toggle. As the feature developed, the modal needed to present dynamic data based on the Pokemon character that was clicked. The `showModal` and `modalCharacter` states were declared at the `App` level with their respective functions called within a handleClick that gets passed down to the Quick View `button` that fires the event. 
+
+```js
+  <Modal 
+    modalCharacter={modalCharacter}
+    onClose={() => setShowModal(false)} 
+    showModal={showModal}/>
+```
+
+```js
+<button 
+  className="quick-view-btn"
+  onClick={() => handleModalClick(character)}
+  >Quick View</button>
+```
 
 <img src="assets/pokemon-take-home-08.gif" alt="pokemon-take-home-08" width="500"/>
